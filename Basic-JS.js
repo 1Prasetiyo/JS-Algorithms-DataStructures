@@ -517,3 +517,19 @@ You should not edit the myDog definition.
 */
 
 // Add New Properties to a JavaScript Object
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "woof";
+
+/* Should :
+You should add the property bark to myDog.
+Passed
+You should not add bark to the initialization of myDog.
+*/
+
+// Delete Properties from a JavaScript Object
