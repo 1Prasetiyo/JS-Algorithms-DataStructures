@@ -478,3 +478,27 @@ myDog should only contain all the given properties.
 */
 
 // Accessing Object Properties with Dot Notation
+var testObj = {
+  12: "Namath",
+  16: "Montana",
+  19: "Unitas"
+};
+
+var playerNumber = 16;       
+var player = testObj[playerNumber];   
+
+/* Should :
+playerNumber should be a number
+Passed
+The variable player should be a string
+Passed
+The value of player should be the string Montana
+Passed
+You should use bracket notation to access testObj
+Passed
+You should not assign the value Montana to the variable player directly.
+Passed
+You should be using the variable playerNumber in your bracket notation
+*/
+
+// Updating Object Properties
