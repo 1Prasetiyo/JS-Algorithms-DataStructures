@@ -502,3 +502,18 @@ You should be using the variable playerNumber in your bracket notation
 */
 
 // Updating Object Properties
+var myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+  myDog.name = "Happy Coder";
+
+/* Should :
+You should update myDog's name property to equal the string Happy Coder.
+Passed
+You should not edit the myDog definition.
+*/
+
+// Add New Properties to a JavaScript Object
