@@ -654,3 +654,50 @@ checkObj({pet: "kitten", bed: "sleigh"}, "gift") should return the string Not Fo
 */
 
 // Manipulating Complex Objects
+var myMusic = [
+  {
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+      "CD",
+      "8T",
+      "LP"
+    ],
+    "gold": true
+  }
+];
+
+myMusic.push({
+  "artist": "Ebit",
+  "title": "Rumput Bergoyang",
+  "release_year": 1995,
+  "formats": [
+    "CD",
+    "mp3",
+    "DVD"
+  ]
+}
+);
+
+/* Should :
+myMusic should be an array
+Passed
+myMusic should have at least two elements
+Passed
+The elements in the myMusic array should be objects
+Passed
+Your object in myMusic should have at least 4 properties
+Passed
+Your object in myMusic should contain the property artist which is a string
+Passed
+Your object in myMusic should contain the property title which is a string
+Passed
+Your object in myMusic should contain the property release_year which is a number
+Passed
+Your object in myMusic should contain a formats property which is an array
+Passed
+formats should be an array of strings with at least two elements
+*/
+
+// Accessing Nested Objects
