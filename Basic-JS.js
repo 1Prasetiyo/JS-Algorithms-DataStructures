@@ -533,3 +533,19 @@ You should not add bark to the initialization of myDog.
 */
 
 // Delete Properties from a JavaScript Object
+var myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+delete myDog.tails;
+
+/* Should :
+You should delete the property tails from myDog.
+Passed
+You should not modify the myDog setup.
+*/
+
+// Using Objects for Lookups
