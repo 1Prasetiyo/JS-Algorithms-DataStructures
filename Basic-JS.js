@@ -549,3 +549,41 @@ You should not modify the myDog setup.
 */
 
 // Using Objects for Lookups
+function phoneticLookup(val) {
+  var result = "";
+  var lookup = {
+    "alpha": "Adams",
+    "bravo": "Boston",
+    "charlie": "Chicago",
+    "delta": "Denver",
+    "echo": "Easy",
+    "foxtrot": "Frank",
+    "": undefined
+  };
+  result = lookup[val];
+  return result;
+}
+
+phoneticLookup("charlie");
+
+/* Should :
+phoneticLookup("alpha") should equal the string Adams
+Passed
+phoneticLookup("bravo") should equal the string Boston
+Passed
+phoneticLookup("charlie") should equal the string Chicago
+Passed
+phoneticLookup("delta") should equal the string Denver
+Passed
+phoneticLookup("echo") should equal the string Easy
+Passed
+phoneticLookup("foxtrot") should equal the string Frank
+Passed
+phoneticLookup("") should equal undefined
+Passed
+You should not modify the return statement
+Passed
+You should not use case, switch, or if statements
+*/
+
+// Testing Objects for Properties
