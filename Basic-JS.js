@@ -479,6 +479,50 @@ myDog should only contain all the given properties.
 
 // Accessing Object Properties with Dot Notation
 var testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
+
+/* Should :
+hatValue should be a string
+Passed
+The value of hatValue should be the string ballcap
+Passed
+shirtValue should be a string
+Passed
+The value of shirtValue should be the string jersey
+Passed
+You should use dot notation twice
+*/
+
+// Accessing Object Properties with Bracket Notation
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+
+var entreeValue = testObj ["an entree"];   
+var drinkValue = testObj ["the drink"];    
+
+/* Should :
+entreeValue should be a string
+Passed
+The value of entreeValue should be the string hamburger
+Passed
+drinkValue should be a string
+Passed
+The value of drinkValue should be the string water
+Passed
+You should use bracket notation twice
+*/
+
+// Accessing Object Properties with Variables
+var testObj = {
   12: "Namath",
   16: "Montana",
   19: "Unitas"
@@ -587,3 +631,26 @@ You should not use case, switch, or if statements
 */
 
 // Testing Objects for Properties
+function checkObj(obj, checkProp) {
+  if (obj.hasOwnProperty(checkProp)) {
+    return obj[checkProp]; 
+  } else {  
+    return "Not Found";
+  }
+}
+
+/* Should :
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "gift") should return the string pony.
+Passed
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "pet") should return the string kitten.
+Passed
+checkObj({gift: "pony", pet: "kitten", bed: "sleigh"}, "house") should return the string Not Found.
+Passed
+checkObj({city: "Seattle"}, "city") should return the string Seattle.
+Passed
+checkObj({city: "Seattle"}, "district") should return the string Not Found.
+Passed
+checkObj({pet: "kitten", bed: "sleigh"}, "gift") should return the string Not Found.
+*/
+
+// Manipulating Complex Objects
