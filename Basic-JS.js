@@ -801,3 +801,17 @@ After updateRecords(recordCollection, 1245, "albumTitle", "Riptide"), albumTitle
 */
 
 // Iterate with JavaScript While Loops
+var myArray = [];
+var i = 5;
+while(i >= 0) {
+  myArray.push(i);
+  i--;
+}
+
+/* Should :
+You should be using a while loop for this.
+Passed
+myArray should equal [5,4,3,2,1,0].
+*/
+
+// Iterate with JavaScript For Loops
