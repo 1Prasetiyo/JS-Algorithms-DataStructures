@@ -815,3 +815,20 @@ myArray should equal [5,4,3,2,1,0].
 */
 
 // Iterate with JavaScript For Loops
+var myArray = [];
+for (var i = 0; i < 5; i++) {
+  myArray.push(i);
+}
+
+var myArray = [];
+for (var i = 1; i < 6; i++) {
+  myArray.push(i);
+}
+
+/* Should :
+You should be using a for loop for this.
+Passed
+myArray should equal [1,2,3,4,5].
+*/
+
+// Iterate Odd Numbers With a For Loop
