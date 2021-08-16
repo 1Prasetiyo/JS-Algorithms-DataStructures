@@ -843,3 +843,17 @@ myArray should equal [1,3,5,7,9].
 */
 
 // Count Backwards With a For Loop
+var myArray = [];
+for (var i = 9; i > 0; i -= 2) {
+  myArray.push(i);
+}
+
+/* Should :
+You should be using a for loop for this.
+Passed
+You should be using the array method push.
+Passed
+myArray should equal [9,7,5,3,1].
+*/
+
+// Iterate Through an Array with a For Loop
