@@ -832,3 +832,14 @@ myArray should equal [1,2,3,4,5].
 */
 
 // Iterate Odd Numbers With a For Loop
+var myArray = [];
+for (var i = 1; i < 10; i += 2) {
+  myArray.push(i);
+} 
+/* Should :
+You should be using a for loop for this.
+Passed
+myArray should equal [1,3,5,7,9].
+*/
+
+// Count Backwards With a For Loop
