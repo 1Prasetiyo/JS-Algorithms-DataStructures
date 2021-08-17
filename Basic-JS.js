@@ -857,3 +857,20 @@ myArray should equal [9,7,5,3,1].
 */
 
 // Iterate Through an Array with a For Loop
+var myArr = [ 2, 3, 4, 5, 6];
+var total = 0;
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+/* Should :
+total should be declared and initialized to 0.
+Passed
+total should equal 20.
+Passed
+You should use a for loop to iterate through myArr.
+Passed
+You should not attempt to directly assign the value 20 to total.
+*/
+
+// Nesting For Loops
