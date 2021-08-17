@@ -894,3 +894,23 @@ multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) should return 54
 */
 
 // Iterate with JavaScript Do...While Loops
+var myArray = [];
+var i = 10;
+do {
+  myArray.push(i);
+  i++;
+} while (i < 10);
+while (i < 5) {
+  myArray.push(i);
+  i++;
+}
+
+/* Should :
+You should be using a do...while loop for this exercise.
+Passed
+myArray should equal [10].
+Passed
+i should equal 11
+*/
+
+// Replace Loops using Recursion
