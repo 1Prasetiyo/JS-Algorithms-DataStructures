@@ -874,3 +874,23 @@ You should not attempt to directly assign the value 20 to total.
 */
 
 // Nesting For Loops
+function multiplyAll(arr) {
+  var product = 1;
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
+      product = product * arr[i][j];
+    }
+  } return product;
+}
+
+multiplyAll([[1,2],[3,4],[5,6,7]]);
+
+/* Should :
+multiplyAll([[1],[2],[3]]) should return 6
+Passed
+multiplyAll([[1,2],[3,4],[5,6,7]]) should return 5040
+Passed
+multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) should return 54
+*/
+
+// Iterate with JavaScript Do...While Loops
