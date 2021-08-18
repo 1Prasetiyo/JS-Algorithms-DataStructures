@@ -1006,3 +1006,23 @@ randomRange should use both myMax and myMin, and return a random number in your 
 */
 
 // Use the parseInt Function
+function convertToInteger(str) {
+  var a = parseInt(str);
+  return a;
+}
+
+convertToInteger("56");
+
+/* Should :
+convertToInteger should use the parseInt() function
+Passed
+convertToInteger("56") should return a number
+Passed
+convertToInteger("56") should return 56
+Passed
+convertToInteger("77") should return 77
+Passed
+convertToInteger("JamesBond") should return NaN
+*/
+
+// Use the parseInt Function with a Radix
