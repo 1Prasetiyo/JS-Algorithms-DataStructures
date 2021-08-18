@@ -976,3 +976,18 @@ You should be using Math.random to generate the random decimal number.
 */
 
 // Generate Random Whole Numbers with JavaScript
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+/* Should :
+The result of randomWholeNum should be a whole number.
+Passed
+You should use Math.random to generate a random number.
+Passed
+You should have multiplied the result of Math.random by 10 to make it a number that is between zero and nine.
+Passed
+You should use Math.floor to remove the decimal part of the number.
+*/
+
+// Generate Random Whole Numbers within a Range
