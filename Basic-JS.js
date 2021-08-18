@@ -963,3 +963,16 @@ lookUpProfile("Akira", "address") should return the string No such property
 */
 
 // Generate Random Fractions with JavaScript
+function randomFraction() {
+  return Math.random();
+  return 0;
+}
+/* Should :
+randomFraction should return a random number.
+Passed
+The number returned by randomFraction should be a decimal.
+Passed
+You should be using Math.random to generate the random decimal number.
+*/
+
+// Generate Random Whole Numbers with JavaScript
