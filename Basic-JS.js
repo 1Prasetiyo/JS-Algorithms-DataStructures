@@ -935,3 +935,31 @@ You should use recursion to solve this problem.
 */
 
 // Profile Lookup
+function lookUpProfile(name, prop) {
+  for (let x = 0; x < contacts.length; x++) {
+    if (contacts[x].firstName === name) {
+      if (contacts[x].hasOwnProperty(prop)) {
+        return contacts[x][prop];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+}
+
+/* Should :
+lookUpProfile("Kristian", "lastName") should return the string Vos
+Passed
+lookUpProfile("Sherlock", "likes") should return ["Intriguing Cases", "Violin"]
+Passed
+lookUpProfile("Harry", "likes") should return an array
+Passed
+lookUpProfile("Bob", "number") should return the string No such contact
+Passed
+lookUpProfile("Bob", "potato") should return the string No such contact
+Passed
+lookUpProfile("Akira", "address") should return the string No such property
+*/
+
+// Generate Random Fractions with JavaScript
