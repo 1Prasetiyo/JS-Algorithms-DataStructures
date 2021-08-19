@@ -1046,3 +1046,20 @@ convertToInteger("JamesBond") should return NaN
 */
 
 // Use the Conditional (Ternary) Operator
+function checkEqual(a, b) {
+  return a === b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
+
+/* Should :
+checkEqual should use the conditional operator
+Passed
+checkEqual(1, 2) should return the string Not Equal
+Passed
+checkEqual(1, 1) should return the string Equal
+Passed
+checkEqual(1, -1) should return the string Not Equal
+*/
+
+// Use Multiple Conditional (Ternary) Operators
