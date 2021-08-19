@@ -1063,3 +1063,22 @@ checkEqual(1, -1) should return the string Not Equal
 */
 
 // Use Multiple Conditional (Ternary) Operators
+function checkSign(num) {
+  return (num > 0) ? "positive"
+  : (num < 0) ? "negative"
+  : "zero";
+}
+
+checkSign(10);
+
+/* Should :
+checkSign should use multiple conditional operators
+Passed
+checkSign(10) should return the string positive. Note that capitalization matters
+Passed
+checkSign(-12) should return the string negative. Note that capitalization matters
+Passed
+checkSign(0) should return the string zero. Note that capitalization matters
+*/
+
+// Use Recursion to Create a Countdown
