@@ -1082,6 +1082,47 @@ checkSign(0) should return the string zero. Note that capitalization matters
 */
 
 // Use Recursion to Create a Countdown
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n -1);
+    arr.unshift(n);
+    return arr;
+  }
+}
+//  Or
+function countdown(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const arr = countdown(n - 1);
+    arr.splice(0, 0, n);
+    return arr;
+  }
+}
+// Or
+function countdown(n){
+  return n < 1 ? [] : [n].concat(countdown(n - 1));
+}
+// Or
+function countdown(n){
+  return n < 1 ? [] : [n, ...countdown(n - 1)];
+}
+
+/* Should :
+countdown(-1) should return an empty array.
+Passed
+countdown(10) should return [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+Passed
+countdown(5) should return [5, 4, 3, 2, 1]
+Passed
+Your code should not rely on any kind of loops (for, while or higher order functions such as forEach, map, filter, and reduce).
+Passed
+You should use recursion to solve this problem.
+*/
+
+// Use Recursion to Create a Range of Numbers
 function rangeOfNumbers(startNum, endNum) {
   if (endNum - startNum === 0) {
     return [startNum];
