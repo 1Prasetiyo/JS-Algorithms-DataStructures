@@ -1026,3 +1026,23 @@ convertToInteger("JamesBond") should return NaN
 */
 
 // Use the parseInt Function with a Radix
+function convertToInteger(str, radix) {
+  var a = parseInt(str, 2);
+  return a;
+}
+
+convertToInteger("10011");
+
+/* Should :
+convertToInteger should use the parseInt() function
+Passed
+convertToInteger("10011") should return a number
+Passed
+convertToInteger("10011") should return 19
+Passed
+convertToInteger("111001") should return 57
+Passed
+convertToInteger("JamesBond") should return NaN
+*/
+
+// Use the Conditional (Ternary) Operator
