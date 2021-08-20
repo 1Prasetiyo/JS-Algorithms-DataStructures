@@ -140,3 +140,14 @@ The function keyword should not be used.
 */
 
 // Set Default Parameters for Your Functions
+const increment = (number, value = 1) => number + value;
+
+/* Should :
+The result of increment(5, 2) should be 7.
+Passed
+The result of increment(5) should be 6.
+Passed
+A default parameter value of 1 should be used for value.
+*/
+
+// Use the Rest Parameter with Function Parameters
