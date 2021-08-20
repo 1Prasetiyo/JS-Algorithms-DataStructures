@@ -102,3 +102,18 @@ PI should equal 3.14.
 */
 
 // Use Arrow Functions to Write Concise Anonymous Functions
+var magic = function() {
+  return new Date();
+};
+// return to :
+const magic = () => new Date();
+
+/* Should :
+You should replace the var keyword.
+magic should be a constant variable (by using const).
+magic should be a function.
+magic() should return the correct date.
+The function keyword should not be used.
+*/
+
+// Write Arrow Functions with Parameters
