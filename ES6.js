@@ -117,3 +117,26 @@ The function keyword should not be used.
 */
 
 // Write Arrow Functions with Parameters
+var myConcat = function(arr1, arr2) {
+  return arr1.concat(arr2);
+};
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+//  return to :
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+console.log(myConcat([1, 2], [3, 4, 5]));
+
+/* Should :
+You should replace the var keyword.
+Passed
+myConcat should be a constant variable (by using const).
+Passed
+myConcat should be an arrow function with two parameters
+Passed
+myConcat() should return [1, 2, 3, 4, 5].
+Passed
+The function keyword should not be used.
+*/
+
+// Set Default Parameters for Your Functions
