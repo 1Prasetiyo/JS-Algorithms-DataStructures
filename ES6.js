@@ -38,3 +38,22 @@ checkScope() should return the string function scope
 */
 
 // Declare a Read-Only Variable with the const Keyword
+function printManyTimes(str) {
+  const SENTENCE = str + " is cool!";
+  for (let i = 0; i < str.length; i+=2) {
+    console.log(SENTENCE);
+  }
+}
+printManyTimes("freeCodeCamp");
+
+/* Should :
+var should not exist in your code.
+Passed
+SENTENCE should be a constant variable declared with const.
+Passed
+i should be declared with let.
+Passed
+console.log should be changed to print the SENTENCE variable.
+*/
+
+// Mutate an Array Declared with const
