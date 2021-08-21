@@ -77,7 +77,6 @@ s should be equal to [2, 5, 7].
 */
 
 // Prevent Object Mutation
-
 function freezeObj() {
   const MATH_CONSTANTS = {
     PI: 3.14
@@ -167,3 +166,26 @@ sum should be an arrow function which uses the rest parameter syntax (...) on th
 */
 
 // Use the Spread Operator to Evaluate Arrays In-Place
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [];  // Change this line
+
+console.log(arr2);
+//  Return to
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];
+
+console.log(arr2);
+
+/* Should :
+arr2 should be correct copy of arr1.
+Passed
+... spread operator should be used to duplicate arr1.
+Passed
+arr2 should remain unchanged when arr1 is changed.
+*/
+
+// Use Destructuring Assignment to Extract Values from Objects
