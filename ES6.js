@@ -151,3 +151,19 @@ A default parameter value of 1 should be used for value.
 */
 
 // Use the Rest Parameter with Function Parameters
+const sum = (x, y, z) => {
+  const args = [x, y, z];
+  return args.reduce((a, b) => a + b, 0);
+}
+// return to
+const sum = (...args) => args.reduce((a, b) => a + b, 0);
+
+/* Should :
+The result of sum(0,1,2) should be 3
+The result of sum(1,2,3,4) should be 10
+The result of sum(5) should be 5
+The result of sum() should be 0
+sum should be an arrow function which uses the rest parameter syntax (...) on the args parameter.
+*/
+
+// Use the Spread Operator to Evaluate Arrays In-Place
