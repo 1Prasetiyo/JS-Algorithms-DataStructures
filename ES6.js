@@ -283,3 +283,21 @@ You should use array destructuring to swap a and b.
 */
 
 // Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+    const [a, b, ...arr] = list; 
+  return arr;
+}
+const arr = removeFirstTwo(source);
+
+/* Should : 
+arr should be [3,4,5,6,7,8,9,10]
+Passed
+source should be [1,2,3,4,5,6,7,8,9,10]
+Passed
+Array.slice() should not be used.
+Passed
+Destructuring on list should be used.
+*/
+
+// Use Destructuring Assignment to Pass an Object as a Function's Parameters
