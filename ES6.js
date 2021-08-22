@@ -189,3 +189,29 @@ arr2 should remain unchanged when arr1 is changed.
 */
 
 // Use Destructuring Assignment to Extract Values from Objects
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+const today = HIGH_TEMPERATURES.today;
+const tomorrow = HIGH_TEMPERATURES.tomorrow;
+// return to
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+const {today, tomorrow} = HIGH_TEMPERATURES;
+
+/* Should :
+You should remove the ES5 assignment syntax.
+Passed
+You should use destructuring to create the today variable.
+Passed
+You should use destructuring to create the tomorrow variable.
+Passed
+today should be equal to 77 and tomorrow should be equal to 80.
+*/
+
+// Use Destructuring Assignment to Assign Variables from Objects
