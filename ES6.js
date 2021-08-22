@@ -360,3 +360,24 @@ An iterator should be used.
 */
 
 // Write Concise Object Literal Declarations Using Object Property Shorthand
+const createPerson = (name, age, gender) => {
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+};
+// return  to
+const createPerson = (name, age, gender) => ({
+  name,
+  age,
+  gender
+});
+
+/* Should :
+createPerson("Zodiac Hasbro", 56, "male") should return {name: "Zodiac Hasbro", age: 56, gender: "male"}.
+Passed
+Your code should not use key:value.
+*/
+
+// Write Concise Declarative Functions with ES6
