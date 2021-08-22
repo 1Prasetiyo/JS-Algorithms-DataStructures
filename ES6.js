@@ -215,3 +215,31 @@ today should be equal to 77 and tomorrow should be equal to 80.
 */
 
 // Use Destructuring Assignment to Assign Variables from Objects
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const highToday = HIGH_TEMPERATURES.today;
+const highTomorrow = HIGH_TEMPERATURES.tomorrow; 
+//  return to
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
+
+/* Should :
+You should remove the ES5 assignment syntax.
+Passed
+You should use destructuring to create the highToday variable.
+Passed
+You should use destructuring to create the highTomorrow variable.
+Passed
+highToday should be equal to 77 and highTomorrow should be equal to 80.
+*/
+
+// Use Destructuring Assignment to Assign Variables from Nested Objects
