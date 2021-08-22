@@ -271,3 +271,15 @@ lowToday should be equal to 64 and highToday should be equal to 77.
 */
 
 // Use Destructuring Assignment to Assign Variables from Arrays
+let a = 8, b = 6;
+[a, b] = [b, a];
+
+/* Should :
+The value of a should be 6, after swapping.
+Passed
+The value of b should be 8, after swapping.
+Passed
+You should use array destructuring to swap a and b.
+*/
+
+// Use Destructuring Assignment with the Rest Parameter to Reassign Array Elements
