@@ -334,3 +334,29 @@ Destructured parameter should be used.
 */
 
 // Create Strings using Template Literals
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+
+/* Should :
+failuresList should be an array containing result failure messages.
+Passed
+failuresList should be equal to the specified output.
+Passed
+Template strings and expression interpolation should be used.
+Passed
+An iterator should be used.
+*/
+
+// Write Concise Object Literal Declarations Using Object Property Shorthand
