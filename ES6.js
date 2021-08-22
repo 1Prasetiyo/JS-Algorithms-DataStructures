@@ -243,3 +243,31 @@ highToday should be equal to 77 and highTomorrow should be equal to 80.
 */
 
 // Use Destructuring Assignment to Assign Variables from Nested Objects
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+const lowToday = LOCAL_FORECAST.today.low;
+const highToday = LOCAL_FORECAST.today.high;
+// return to
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+  
+const {today: {low: lowToday, high: highToday}} = LOCAL_FORECAST;
+
+/* Should :
+You should remove the ES5 assignment syntax.
+Passed
+You should use destructuring to create the lowToday variable.
+Passed
+You should use destructuring to create the highToday variable.
+Passed
+lowToday should be equal to 64 and highToday should be equal to 77.
+*/
+
+// Use Destructuring Assignment to Assign Variables from Arrays
