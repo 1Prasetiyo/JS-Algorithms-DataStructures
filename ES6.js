@@ -399,3 +399,22 @@ bicycle.setGear(48) should change the gear value to 48.
 */
 
 // Use class Syntax to Define a Constructor Function
+class Vegetable {
+  constructor(name) {
+    this.name=name;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+
+/* Should :
+Vegetable should be a class with a defined constructor method.
+Passed
+The class keyword should be used.
+Passed
+Vegetable should be able to be instantiated.
+Passed
+carrot.name should return carrot.
+*/
+
+// Use getters and setters to Control Access to an Object
