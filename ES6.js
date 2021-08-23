@@ -381,3 +381,21 @@ Your code should not use key:value.
 */
 
 // Write Concise Declarative Functions with ES6
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+/* Should :
+Traditional function expression should not be used.
+Passed
+setGear should be a declarative function.
+Passed
+bicycle.setGear(48) should change the gear value to 48.
+*/
+
+// Use class Syntax to Define a Constructor Function
