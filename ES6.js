@@ -531,3 +531,43 @@ Your promise should receive a function with resolve and reject as parameters.
 */
 
 // Complete a Promise with resolve and reject
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  }   else {
+        reject("Data not received")  
+  }
+});
+
+/* Should :
+resolve should be called with the expected string when the if condition is true.
+Passed
+reject should be called with the expected string when the if condition is false.
+*/
+
+// Handle a Fulfilled Promise with then
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer = true;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+/* Should :
+You should call the then method on the promise.
+Passed
+Your then method should have a callback function with result as its parameter.
+Passed
+You should log result to the console.
+*/
+
+// Handle a Rejected Promise with catch
