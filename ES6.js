@@ -504,3 +504,30 @@ Your code should properly use import * as syntax.
 */
 
 // Create an Export Fallback with export default
+export default function subtract(x, y) {
+  return x - y;
+}
+
+/* Should :
+Your code should use an export fallback.
+*/
+
+// Import a Default Export
+import subtract from './math_functions.js';
+
+subtract(7,4);
+
+/* Should :
+You should properly import subtract from math_functions.js.
+*/
+
+// Create a JavaScript Promise
+const makeServerRequest = new Promise((resolve, reject) => {});
+
+/* Should :
+You should assign a promise to a declared variable named makeServerRequest.
+Passed
+Your promise should receive a function with resolve and reject as parameters.
+*/
+
+// Complete a Promise with resolve and reject
