@@ -450,3 +450,35 @@ A getter should be defined.
 */
 
 // Create a Module Script
+<html>
+  <body>
+    
+  <script type="module" src="index.js"></script>
+    
+  </body>
+</html>
+
+/* Should :
+You should create a script tag.
+Passed
+Your script tag should have the type attribute with a value of module.
+Passed
+Your script tag should have a src of index.js.
+*/
+
+// Use export to Share a Code Block
+export const uppercaseString = (string) => {
+  return string.toUpperCase();
+}
+
+export const lowercaseString = (string) => {
+  return string.toLowerCase()
+}
+
+/* Should :
+You should properly export uppercaseString.
+Passed
+You should properly export lowercaseString.
+*/
+
+// Reuse JavaScript Code Using import
