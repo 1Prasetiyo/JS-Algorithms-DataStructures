@@ -482,3 +482,25 @@ You should properly export lowercaseString.
 */
 
 // Reuse JavaScript Code Using import
+import {uppercaseString, lowercaseString} from './string_functions.js';
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+
+/* Should :
+You should properly import uppercaseString.
+Passed
+You should properly import lowercaseString.
+*/
+
+// Use * to Import Everything from a File
+import * as stringFunctions from "./string_functions.js";
+
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!");
+
+/* Should :
+Your code should properly use import * as syntax.
+*/
+
+// Create an Export Fallback with export default
