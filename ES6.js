@@ -418,3 +418,35 @@ carrot.name should return carrot.
 */
 
 // Use getters and setters to Control Access to an Object
+class Thermostat {
+  constructor(fahrenheit) {
+    this.fahrenheit = fahrenheit;
+  }
+
+  get temperature() {
+    return (5 / 9) * (this.fahrenheit - 32);
+  }
+  
+  set temperature(celsius) {
+    this.fahrenheit = (celsius * 9.0) / 5 + 32;
+  }
+}
+
+const thermos = new Thermostat(76); 
+let temp = thermos.temperature; 
+thermos.temperature = 26;
+temp = thermos.temperature;
+
+/* Should :
+Thermostat should be a class with a defined constructor method.
+Passed
+class keyword should be used.
+Passed
+Thermostat should be able to be instantiated.
+Passed
+When instantiated with a Fahrenheit value, Thermostat should set the correct temperature.
+Passed
+A getter should be defined.
+*/
+
+// Create a Module Script
