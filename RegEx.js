@@ -70,3 +70,58 @@ Your regex should match the string FReeCodeCAmp
 */
 
 // Extract Matches
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/; // Change this line
+let result = extractStr.match(codingRegex); // Change this line
+
+/* Should :
+The result should have the string coding
+Passed
+Your regex codingRegex should search for the string coding
+Passed
+You should use the .match() method.
+*/
+
+// Find More Than the First Match
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /Twinkle/gi; // Change this line
+let result = twinkleStar.match(starRegex); // Change this line
+
+/* Should :
+Your regex starRegex should use the global flag g
+Passed
+Your regex starRegex should use the case insensitive flag i
+Passed
+Your match should match both occurrences of the word Twinkle
+Passed
+Your match result should have two elements in it.
+*/
+
+// Match Anything with Wildcard Period
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /run|sun|fun|pun|nun|bun./; // Change this line
+let result = unRegex.test(exampleStr);
+
+/* Should :
+You should use the .test() method.
+Passed
+You should use the wildcard character in your regex unRegex
+Passed
+Your regex unRegex should match run in the string Let us go on a run.
+Passed
+Your regex unRegex should match sun in the string The sun is out today.
+Passed
+Your regex unRegex should match fun in the string Coding is a lot of fun.
+Passed
+Your regex unRegex should match pun in the string Seven days without a pun makes one weak.
+Passed
+Your regex unRegex should match nun in the string One takes a vow to be a nun.
+Passed
+Your regex unRegex should match bun in the string She got fired from the hot dog stand for putting her hair in a bun.
+Passed
+Your regex unRegex should not match the string There is a bug in my code.
+Passed
+Your regex unRegex should not match the string Catch me if you can.
+*/
+
+// Match Single Character with Multiple Possibilities
