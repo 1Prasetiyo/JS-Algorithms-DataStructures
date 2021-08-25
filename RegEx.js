@@ -125,3 +125,33 @@ Your regex unRegex should not match the string Catch me if you can.
 */
 
 // Match Single Character with Multiple Possibilities
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aiueo]/gi; // Change this line
+let result = quoteSample.match(vowelRegex); // Change this line
+
+/* Should :
+You should find all 25 vowels.
+Passed
+Your regex vowelRegex should use a character class.
+Passed
+Your regex vowelRegex should use the global flag.
+Passed
+Your regex vowelRegex should use the case insensitive flag.
+Passed
+Your regex should not match any consonants.
+*/
+
+// Match Letters of the Alphabet
+let quoteSample = "The quick brown fox jumps over the lazy dog.";
+let alphabetRegex = /[a-z]/gi; // Change this line
+let result = quoteSample.match(alphabetRegex); // Change this line
+
+/* Should :
+Your regex alphabetRegex should match 35 items.
+Passed
+Your regex alphabetRegex should use the global flag.
+Passed
+Your regex alphabetRegex should use the case insensitive flag.
+*/
+
+// Match Numbers and Letters of the Alphabet
