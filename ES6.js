@@ -571,3 +571,30 @@ You should log result to the console.
 */
 
 // Handle a Rejected Promise with catch
+const makeServerRequest = new Promise((resolve, reject) => {
+  let responseFromServer = false;
+    
+  if(responseFromServer) {
+    resolve("We got the data");
+  } else {  
+    reject("Data not received");
+  }
+});
+
+makeServerRequest.then(result => {
+  console.log(result);
+});
+
+makeServerRequest.catch(error => {
+  console.log(error);
+});
+
+/* Should :
+You should call the catch method on the promise.
+Passed
+Your catch method should have a callback function with error as its parameter.
+Passed
+You should log error to the console.
+*/
+
+// Complete
