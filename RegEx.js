@@ -277,3 +277,76 @@ Your regex should match fifty criminals (CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
 */
 
 /* Match Beginning String Patterns
+
+Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
+
+In an earlier challenge, you used the caret character (^) inside a character set to create a negated character set in the form [^thingsThatWillNotBeMatched]. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+
+The first test call would return true, while the second would return false.
+
+Use the caret character in a regex to find Cal only in the beginning of the string rickyAndCal.
+*/
+
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /change/; // Change this line
+let result = calRegex.test(rickyAndCal);
+// Turn to:
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
+
+/* Should :
+Your regex should search for the string Cal with a capital letter.
+Passed
+
+Your regex should not use any flags.
+Passed
+
+Your regex should match the string Cal at the beginning of the string.
+Passed
+
+Your regex should not match the string Cal in the middle of a string.
+*/
+
+/* Match Ending String Patterns
+
+In the last challenge, you learned to use the caret character to search for patterns at the beginning of strings. There is also a way to search for patterns at the end of strings.
+
+You can search the end of strings using the dollar sign character $ at the end of the regex.
+
+let theEnding = "This is a never ending story";
+let storyRegex = /story$/;
+storyRegex.test(theEnding);
+let noEnding = "Sometimes a story will have to end";
+storyRegex.test(noEnding);
+
+The first test call would return true, while the second would return false.
+
+Use the anchor character ($) to match the string caboose at the end of the string caboose.
+*/
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /change/; // Change this line
+let result = lastRegex.test(caboose);
+// Turn to :
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
+
+/* Should :
+You should search for caboose with the dollar sign $ anchor in your regex.
+Passed
+
+Your regex should not use any flags.
+Passed
+
+You should match caboose at the end of the string The last car on a train is the caboose
+*/
+
+/* Match All Letters and Numbers
