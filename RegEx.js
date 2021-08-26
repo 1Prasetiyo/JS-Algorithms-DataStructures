@@ -155,3 +155,42 @@ Your regex alphabetRegex should use the case insensitive flag.
 */
 
 // Match Numbers and Letters of the Alphabet
+let quoteSample = "Blueberry 3.141592653s are delicious.";
+let myRegex = /[h-s2-6]/ig; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+
+/* Should :
+Your regex myRegex should match 17 items.
+Passed
+Your regex myRegex should use the global flag.
+Passed
+Your regex myRegex should use the case insensitive flag.
+*/
+
+// Match Single Characters Not Specified
+let quoteSample = "3 blind mice.";
+let myRegex = /[^aeiou0-9]/gi; // Change this line
+let result = quoteSample.match(myRegex); // Change this line
+
+/* Should :
+Your regex myRegex should match 9 items.
+Passed
+Your regex myRegex should use the global flag.
+Passed
+Your regex myRegex should use the case insensitive flag.
+*/
+
+// Match Characters that Occur One or More Times
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/gi; // Change this line
+let result = difficultSpelling.match(myRegex);
+
+/* Should :
+Your regex myRegex should use the + sign to match one or more s characters.
+Passed
+Your regex myRegex should match 2 items.
+Passed
+The result variable should be an array with two matches of ss
+*/
+
+// Match Characters that Occur Zero or More Times
