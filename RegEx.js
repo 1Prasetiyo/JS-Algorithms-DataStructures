@@ -194,3 +194,37 @@ The result variable should be an array with two matches of ss
 */
 
 // Match Characters that Occur Zero or More Times
+// Only change code below this line
+let chewieRegex = /Aa*/; // Change this line
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
+
+/* Should :
+Your regex chewieRegex should use the * character to match zero or more a characters.
+Passed
+Your regex should match the string A in chewieQuote.
+Passed
+Your regex should match the string Aaaaaaaaaaaaaaaa in chewieQuote.
+Passed
+Your regex chewieRegex should match 16 characters in chewieQuote.
+Passed
+Your regex should not match any characters in the string He made a fair move. Screaming about it can't help you.
+Passed
+Your regex should not match any characters in the string Let him have it. It's not wise to upset a Wookiee.
+*/
+
+// Find Characters with Lazy Matching
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/; // Change this line
+let result = text.match(myRegex);
+
+/* Should :
+The result variable should be an array with <h1> in it
+Passed
+myRegex should use lazy matching
+Passed
+myRegex should not include the string h1
+*/
+
+/* Find One or More Criminals in a Hunt
