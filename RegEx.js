@@ -1058,3 +1058,55 @@ Your regex should match the string 10 10 10.
 
 /* Your regex should use the shorthand character class for digits.
 Passed
+
+Your regex should reuse a capture group twice.
+Passed
+
+Your regex should match the string 42 42 42.
+Passed
+
+Your regex should match the string 100 100 100.
+Passed
+
+Your regex should not match the string 42 42 42 42.
+Passed
+
+Your regex should not match the string 42 42.
+Passed
+
+Your regex should not match the string 101 102 103.
+Passed
+
+Your regex should not match the string 1 2 3.
+Passed
+
+Your regex should match the string 10 10 10.
+*/
+
+let str = "one two three";
+let fixRegex = /change/; // Change this line
+let replaceText = ""; // Change this line
+let result = str.replace(fixRegex, replaceText);
+// Turn to
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; 
+let replaceText = "$3 $2 $1"; 
+let result = str.replace(fixRegex, replaceText);
+
+/* Should :
+You should use .replace() to search and replace.
+Passed
+
+Your regex should change the string one two three to the string three two one
+Passed
+
+You should not change the last line.
+Passed
+
+fixRegex should use at least three capture groups.
+Passed
+
+replaceText should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
+*/
+
+/*Remove Whitespace from Start and End
