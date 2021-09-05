@@ -1049,3 +1049,71 @@ The function countOnline should return 0 when the object { Alan: { online: false
 END*/
 
 /* Generate an Array of All Object Keys with Object.keys()
+
+We can also generate an array which contains all the keys stored in an object using the Object.keys() method and passing in an object as the argument. This will return an array with strings representing each property in the object. Again, there will be no specific order to the entries in the array.
+
+Finish writing the getArrayOfUsers function so that it returns an array containing all the properties in the object it receives as an argument.
+*/
+
+let users = {
+    Alan: {
+      age: 27,
+      online: false
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: false
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+  };
+  
+  function getArrayOfUsers(obj) {
+    // Only change code below this line
+  
+    // Only change code above this line
+  }
+  
+  console.log(getArrayOfUsers(users));
+// Turn to
+let users = {
+    Alan: {
+      age: 27,
+      online: false
+    },
+    Jeff: {
+      age: 32,
+      online: true
+    },
+    Sarah: {
+      age: 48,
+      online: false
+    },
+    Ryan: {
+      age: 19,
+      online: true
+    }
+  };
+  
+  function getArrayOfUsers(obj) {
+    // Only change code below this line
+    return Object.keys(obj);
+    // Only change code above this line
+  }
+  
+  console.log(getArrayOfUsers(users));
+
+/* Should :
+The users object should only contain the keys Alan, Jeff, Sarah, and Ryan
+Passed
+
+The getArrayOfUsers function should return an array which contains all the keys in the users object
+END*/
+
+/* Modify an Array Stored in an Object
