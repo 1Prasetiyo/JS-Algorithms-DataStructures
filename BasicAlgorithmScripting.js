@@ -153,3 +153,78 @@ factorialize(0) should return 1.
 END*/
 
 /* Find the Longest Word in a String
+
+Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+*/
+
+function findLongestWordLength(str) {
+    return str.length;
+  }
+  
+  findLongestWordLength("The quick brown fox jumped over the lazy dog");
+// Turn to
+function findLongestWordLength(str) {
+    let words = str.split(' ');
+    let maxLength = 0;
+  
+    for (let i = 0; i < words.length; i++) {
+      if (words[i].length > maxLength) {
+        maxLength = words[i].length;
+      }
+    }
+  
+    return maxLength;
+  }
+// Or
+function findLongestWordLength(s) {
+    return s.split(' ')
+      .reduce(function(longest, word) {
+        return Math.max(longest, word.length)
+      }, 0);
+}
+// Or
+function findLongestWordLength(str) {
+    return Math.max(...str.split(" ").map(word => word.length));
+}
+// Or
+function findLongestWordLength(str) {
+    // split the string into individual words
+    const words = str.split(" ");
+  
+    // words only has 1 element left that is the longest element
+    if (words.length == 1) {
+      return words[0].length;
+    }
+  
+    // if words has multiple elements, remove the first element
+    // and recursively call the function
+    return Math.max(
+      words[0].length,
+      findLongestWordLength(words.slice(1).join(" "))
+    );
+  }
+  
+  findLongestWordLength("The quick brown fox jumped over the lazy dog");
+
+/* Should :
+findLongestWordLength("The quick brown fox jumped over the lazy dog") should return a number.
+Passed
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog") should return 6.
+Passed
+
+findLongestWordLength("May the force be with you") should return 5.
+Passed
+
+findLongestWordLength("Google do a barrel roll") should return 6.
+Passed
+
+findLongestWordLength("What is the average airspeed velocity of an unladen swallow") should return 8.
+Passed
+
+findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") should return 19.
+END*/
+
+/* Return Largest Numbers in Arrays
