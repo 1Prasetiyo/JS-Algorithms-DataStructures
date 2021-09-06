@@ -81,3 +81,75 @@ reverseString("Greetings from Earth") should return the string htraE morf sgnite
 END*/
 
 /* Factorialize a Number
+
+Return the factorial of the provided integer.
+
+If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+
+Factorials are often represented with the shorthand notation n!
+
+For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+Only integers greater than or equal to zero will be supplied to the function.
+*/
+
+function factorialize(num) {
+    return num;
+  }
+  
+  factorialize(5);
+// Turn to
+function factorialize(num) {
+    for (var product = 1; num > 0; num--) {
+      product *= num;
+    }
+    return product;
+  }
+  
+  factorialize(5);
+// Or
+function factorialize(num) {
+    if (num === 0) {
+      return 1;
+    }
+    return num * factorialize(num - 1);
+  }
+  
+  factorialize(5);
+// Or
+function factorialize(num, factorial = 1) {
+    if (num == 0) {
+      return factorial;
+    } else {
+      return factorialize(num - 1, factorial * num);
+    }
+  }
+  
+  factorialize(5);
+// Or
+function factorialize(num, factorial = 1) {
+    return num < 0 ? 1 : (
+      new Array(num)
+        .fill(undefined)
+        .reduce((product, val, index) => product * (index + 1), 1)
+    );
+  }
+  factorialize(5);
+
+/* Should :
+factorialize(5) should return a number.
+Passed
+
+factorialize(5) should return 120.
+Passed
+
+factorialize(10) should return 3628800.
+Passed
+
+factorialize(20) should return 2432902008176640000.
+Passed
+
+factorialize(0) should return 1.
+END*/
+
+/* Find the Longest Word in a String
