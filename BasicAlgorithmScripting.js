@@ -627,3 +627,50 @@ END*/
 
 /* 
 Boo who
+
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+*/
+
+function booWho(bool) {
+  return bool;
+}
+
+booWho(null);
+// Turn to
+function booWho(bool) {
+  return typeof bool === "boolean";
+}
+
+// test here
+booWho(null);
+
+/* Code Explanation
+
+    Uses the operator typeof to check if the variable is a boolean. If it is, it will return true. Otherwise, if it is any other type it will return false.
+*/
+
+/* Should :
+booWho(true) should return true.
+
+booWho(false) should return true.
+
+booWho([1, 2, 3]) should return false.
+
+booWho([].slice) should return false.
+
+booWho({ "a": 1 }) should return false.
+
+booWho(1) should return false.
+
+booWho(NaN) should return false.
+
+booWho("a") should return false.
+
+booWho("true") should return false.
+
+booWho("false") should return false.
+END*/
+
+/* Title Case a Sentence
