@@ -836,3 +836,68 @@ The second array should remain the same after the function runs.
 END*/
 
 /* Falsy Bouncer
+
+Remove all falsy values from an array.
+
+Falsy values in JavaScript are false, null, 0, "", undefined, and NaN.
+
+Hint: Try converting each value to a Boolean.
+*/
+
+function bouncer(arr) {
+  return arr;
+}
+
+bouncer([7, "ate", "", false, 9]);
+// Turn to
+/* Hints
+Hint 1
+
+Falsy is something which evaluates to FALSE. There are only six falsy values in JavaScript: undefined, null, NaN, 0, “” (empty string), and false of course.
+Hint 2
+
+We need to make sure we have all the falsy values to compare, we can know it, maybe with a function with all the falsy values…
+Hint 3
+
+Then we need to add a filter() with the falsy values function…
+*/
+function bouncer(arr) {
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i]) newArray.push(arr[i]);
+  }
+  return newArray;
+}
+
+/* Code Explanation
+
+    We create a new empty array.
+    We use a for cycle to iterate over all elements of the provided array (arr).
+    We use the if statement to check if the current element is truthy 1.9k or falsy 2.7k.
+    If the element is truthy, we push it to the new array (newArray). This result in the new array (newArray) containing only truthy elements.
+    We return the new array (newArray).
+*/
+// Or
+function bouncer(arr) {
+  return arr.filter(Boolean);
+}
+
+/* Code Explanation
+
+    The Array.prototype.filter method expects a function that returns a Boolean value which takes a single argument and returns true for truthy 1.9k value or false for falsy 2.7k value. Hence we pass the built-in Boolean function.
+*/
+
+/* Should :
+bouncer([7, "ate", "", false, 9]) should return [7, "ate", 9].
+Passed
+
+bouncer(["a", "b", "c"]) should return ["a", "b", "c"].
+Passed
+
+bouncer([false, null, 0, NaN, undefined, ""]) should return [].
+Passed
+
+bouncer([null, NaN, 1, 2, undefined]) should return [1, 2].
+END*/
+
+/* Where do I Belong
