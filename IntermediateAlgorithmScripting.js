@@ -244,3 +244,100 @@ Passed
 
 [1, "calf", 3, "piglet"], [7, "filly"] should return an array with six items.
 END*/
+
+/* Seek and Destroy
+
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+Note: You have to use the arguments object.
+*/
+
+function destroyer(arr) {
+  return arr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+// SOLUTION
+/* Problem Explanation
+
+This problem is a bit tricky because you have to familiarize yourself with Arguments, as you will have to work with two or more but on the script you only see two. You will remove any number from the first argument that is the same as any other other arguments.
+
+Hints
+Hint 1
+
+You need to work with arguments as if it was a regular array. The best way is to convert it into one.
+Hint 2
+
+You may want to use use various methods like: indexOf(), includes(), or filter(). When in doubt about any function, check those docs!
+*/
+
+function destroyer(arr) {
+  let valsToRemove = Object.values(arguments).slice(1);
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < valsToRemove.length; j++) {
+      if (arr[i] === valsToRemove[j]) {
+        delete arr[i];
+      }
+    }
+  }
+  return arr.filter(item => item !== null);
+}
+
+/*  Code Explanation
+
+    Create an array of valsToRemove using Object.values(arguments).slice(1) and store it in the variable valsToRemove. We’ll use this to check against arr.
+
+    Start a basic for loop to iterate through arr. Nest another for loop inside the first, changing the integer variable j and arr to valsToRemove. This second loop will iterate through valsToRemove .
+
+        Within the second loop create an if statement, checking strictly === that the current value of arr[i] is equal to valsToRemove[j].
+
+        If the value at the current index is equal in both arrays, use delete to remove it from arr.
+
+    Outside of the nested loops: return the modified array, filtering out any null's created by the delete operator.
+*/
+
+// SOLUTION 2
+function destroyer(arr) {
+  var valsToRemove = Array.from(arguments).slice(1);
+  return arr.filter(function(val) {
+    return !valsToRemove.includes(val);
+  });
+}
+
+/*  Code Explanation
+
+    Declare a variable named valsToRemove and set it equal to a new Array object from() the arguments passed into the function. Use the slice() method on the array of arguments, starting from the second index, 1.
+
+    Return the filtered array, using includes() in the callback function to check if val is not in valsToRemove; returning true to keep the value in the original array or false to remove it.
+*/
+
+// SOLUTION 3
+function destroyer(arr, ...valsToRemove) {
+  return arr.filter(elem => !valsToRemove.includes(elem));
+}
+
+/*  Code Explanation
+
+    Using spread operator to retrieve the arguments.
+    Return the filtered array, using includes().
+*/
+
+/* Should :
+destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1].
+Passed
+
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) should return [1, 5, 1].
+Passed
+
+destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
+Passed
+
+destroyer([2, 3, 2, 3], 2, 3) should return [].
+Passed
+
+destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"].
+Passed
+
+destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan") should return [12,92,65].
+END*/
