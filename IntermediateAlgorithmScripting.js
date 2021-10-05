@@ -1713,3 +1713,177 @@ Passed
 
 sumPrimes(977) should return 73156.
 END*/
+
+/* Smallest Common Multiple
+
+Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
+
+The range will be an array of two numbers that will not necessarily be in numerical order.
+
+For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
+*/
+
+function smallestCommons(arr) {
+  return arr;
+}
+
+
+smallestCommons([1,5]);
+// SOLUTION ( Solution 1 - Looping approach )
+/* Problem Explanation
+
+The smallest common multiple between two numbers is the smallest number that both numbers can divide into evenly. This concept can be extended to more than two numbers as well.
+
+We can first start with finding the smallest common multiple between two numbers. Naively, we can start writing out multiple of each number until we write a multiple that exists from both numbers.
+
+An example would be the numbers 3 and 4. The multiples of 3 are 3, 6, 9, 12, 15, 18, ... and the multiples of 4 are 4, 8, 12, 16, 20, .... The first smallest number we run into in both lists is 12 so this is the smallest common multiple between 3 and 4.
+
+An faster approach is to check all multiples of 4 to see if they are also multiples of 3, by checking the remainder when we divide the multiple of 4 by 3.
+
+Be careful - do not forget the keyword range. If we are given [1, 5], then we have to check for the smallest common multiple for all the numbers [1, 2, 3, 4, 5], which is the smallest number that is evenly divisible by all of them.
+
+Hints
+Hint 1
+
+You can use remainder operator (%) to check if the reminder of a division is 0, which means it is evenly divisible.
+*/
+
+function smallestCommons(arr) {
+  // Setup
+  const [min, max] = arr.sort((a, b) => a - b);
+  const numberDivisors = max - min + 1;
+  // Largest possible value for SCM
+  let upperBound = 1;
+  for (let i = min; i <= max; i++) {
+    upperBound *= i;
+  }
+  // Test all multiples of 'max'
+  for (let multiple = max; multiple <= upperBound; multiple += max) {
+    // Check if every value in range divides 'multiple'
+    let divisorCount = 0;
+    for (let i = min; i <= max; i++) {
+      // Count divisors
+      if (multiple % i === 0) {
+        divisorCount += 1;
+      }
+    }
+    if (divisorCount === numberDivisors) {
+      return multiple;
+    }
+  }
+}
+
+smallestCommons([1, 5]);
+
+/* In this solution, we check every multiple of the largest value in the range until we find a value that is divisible by every value in the range.
+
+The upper bound for this loop is the product of all values in the provided range, because this number will be divisible by every value in the range.
+*/
+
+//  Solution 2 - ES6 looping
+function smallestCommons(arr) {
+  // Setup
+  const [min, max] = arr.sort((a, b) => a - b);
+  const range = Array(max - min + 1)
+    .fill(0)
+    .map((_, i) => i + min);
+  // Largest possible value for SCM
+  const upperBound = range.reduce((prod, curr) => prod * curr);
+  // Test all multiples of 'max'
+  for (let multiple = max; multiple <= upperBound; multiple += max) {
+    // Check if every value in range divides 'multiple'
+    const divisible = range.every((value) => multiple % value === 0);
+    if (divisible) {
+      return multiple;
+    }
+  }
+}
+
+smallestCommons([1, 5]);
+
+/* This solution uses ES6 syntax to condense the logic in Solution 1.
+*/
+
+//  Solution 3 - GCD and LCM
+function smallestCommons(arr) {
+  // Setup
+  const [min, max] = arr.sort((a, b) => a - b);
+  const range = Array(max - min + 1)
+    .fill(0)
+    .map((_, i) => i + min);
+  // GCD of two numbers
+  // https://en.wikipedia.org/wiki/Greatest_common_divisor#Euclid's_algorithm
+  const gcd = (a, b) => (b === 0) ? a : gcd(b, a % b);
+  // LCM of two numbers
+  // https://en.wikipedia.org/wiki/Least_common_multiple#Using_the_greatest_common_divisor
+  const lcm = (a, b) => a * b / gcd(a, b);
+  // LCM of multiple numbers
+  // https://en.wikipedia.org/wiki/Least_common_multiple#Other
+  return range.reduce((multiple, curr) => lcm(multiple, curr));
+}
+
+smallestCommons([1, 5]);
+
+/* This solution uses formulae and algorithms for the Greatest Common Divisor and Least Common Multiple off of Wikipedia to compactly and quickly compute the Smallest Common Multiple.
+*/
+
+// Solution 4 - Prime factorization
+// Find the SCM of a range of numbers
+function smallestCommons(arr) {
+  let primeFactors = {};
+  const [min, max] = arr.sort((a, b) => a - b);
+  for (let i = min; i <= max; i++) {
+    // Factorize number in range
+    let primes = getPrimeFactors(i);
+    for (let j in primes) {
+      // Add factor to set or update number of occurrences
+      if (!primeFactors[j] || primes[j] > primeFactors[j]) {
+        primeFactors[j] = primes[j]
+      }
+    }
+  }
+  // Build SCM from factorization
+  let multiple = 1;
+  for (let i in primeFactors) {
+    multiple *= i ** primeFactors[i]
+  }
+  return multiple;
+}
+
+// Compute prime factors of a number
+function getPrimeFactors(num) {
+  const factors = {};
+  for (let prime = 2; prime <= num; prime++) {
+    // Count occurances of factor
+    // Note that composite values will not divide num
+    while ((num % prime) === 0) {
+      factors[prime] = (factors[prime]) ? factors[prime] + 1 : 1;
+      num /= prime;
+    }
+  }
+  return factors;
+}
+
+smallestCommons([1, 5]);
+
+/* This solution uses a prime factorization of the numbers in the range to compute the smallest common multiple. In general, Solution 3 is much faster, but with a very large range or very large values, sometimes Solution 3 may trigger a recursion limit in some browsers.
+*/
+
+/* Should :
+smallestCommons([1, 5]) should return a number.
+Passed
+
+smallestCommons([1, 5]) should return 60.
+Passed
+
+smallestCommons([5, 1]) should return 60.
+Passed
+
+smallestCommons([2, 10]) should return 2520.
+Passed
+
+smallestCommons([1, 13]) should return 360360.
+Passed
+
+smallestCommons([23, 18]) should return 6056820.
+END*/
